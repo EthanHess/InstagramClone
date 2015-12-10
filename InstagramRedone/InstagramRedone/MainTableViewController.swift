@@ -131,7 +131,7 @@ class MainTableViewController: UITableViewController {
             
             let following = PFObject(className: "followers")
             following["following"] = userids[indexPath.row]
-            following["follower"] = PFUser.currentUser()
+            following["follower"] = PFUser.currentUser()?.objectId
             
             following.saveInBackground()
         }
